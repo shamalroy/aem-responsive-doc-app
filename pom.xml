@@ -2,44 +2,54 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.heroku.sample</groupId>
-  <artifactId>webappRunnerSample</artifactId>
+  <artifactId>aem-responsive-doc-app</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>webappRunnerSample Maven Webapp</name>
+  <name>AEM Responsive Docs</name>
   <url>http://maven.apache.org</url>
 
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
+      <dependency>
+          <groupId>org.jsoup</groupId>
+          <artifactId>jsoup</artifactId>
+          <version>1.8.3</version>
+      </dependency>
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>javax.servlet-api</artifactId>
+          <version>3.1.0</version>
+      </dependency>
+      <dependency>
+          <groupId>javax.servlet.jsp</groupId>
+          <artifactId>javax.servlet.jsp-api</artifactId>
+          <version>2.3.1</version>
+      </dependency>
+
   </dependencies>
   <build>
-    <finalName>webappRunnerSample</finalName>
-    <plugins>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-dependency-plugin</artifactId>
-            <version>2.3</version>
-            <executions>
-                <execution>
-                    <phase>package</phase>
-                    <goals><goal>copy</goal></goals>
-                    <configuration>
-                        <artifactItems>
-                            <artifactItem>
-                                <groupId>com.github.jsimone</groupId>
-                                <artifactId>webapp-runner</artifactId>
-                                <version>7.0.22</version>
-                                <destFileName>webapp-runner.jar</destFileName>
-                            </artifactItem>
-                        </artifactItems>
-                    </configuration>
-                </execution>
-            </executions>
-        </plugin>
-    </plugins>
+    <finalName>aem-responsive-doc-app</finalName>
+      <plugins>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-dependency-plugin</artifactId>
+              <version>2.3</version>
+              <executions>
+                  <execution>
+                      <phase>package</phase>
+                      <goals><goal>copy</goal></goals>
+                      <configuration>
+                          <artifactItems>
+                              <artifactItem>
+                                  <groupId>org.eclipse.jetty</groupId>
+                                  <artifactId>jetty-runner</artifactId>
+                                  <version>9.3.3.v20150827</version>
+                                  <destFileName>jetty-runner.jar</destFileName>
+                              </artifactItem>
+                          </artifactItems>
+                      </configuration>
+                  </execution>
+              </executions>
+          </plugin>
+      </plugins>
   </build>
 </project>

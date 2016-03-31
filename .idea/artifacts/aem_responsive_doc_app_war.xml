@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="aem-responsive-doc-app:war">
     <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="webappRunnerSample.war">
+    <root id="archive" name="aem-responsive-doc-app.war">
       <element id="artifact" artifact-name="aem-responsive-doc-app:war exploded" />
     </root>
   </artifact>

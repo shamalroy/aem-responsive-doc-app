@@ -1,14 +1,19 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="aem-responsive-doc-app:war exploded">
-    <output-path>$PROJECT_DIR$/target/webappRunnerSample</output-path>
+    <output-path>$PROJECT_DIR$/target/aem-responsive-doc-app</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="aem-responsive-doc-app" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.jsoup:jsoup:1.8.3" />
+          <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.1.0" />
+          <element id="library" level="project" name="Maven: javax.servlet.jsp:javax.servlet.jsp-api:2.3.1" />
+        </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/webappRunnerSample/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/aem-responsive-doc-app/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="aem-responsive-doc-app/web/Web" />
     </root>
