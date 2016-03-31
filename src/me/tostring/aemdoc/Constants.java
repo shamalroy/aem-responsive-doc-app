@@ -1,4 +1,4 @@
-package main.me.tostring.aemdoc;
+package me.tostring.aemdoc;
 
 /**
  * Created by shamalroy on 3/31/16.

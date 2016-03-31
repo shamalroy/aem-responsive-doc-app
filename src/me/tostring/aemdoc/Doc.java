@@ -1,8 +1,6 @@
-package main.me.tostring.aemdoc;
+package me.tostring.aemdoc;
 
 import org.jsoup.Jsoup;
-import org.jsoup.nodes.Attribute;
-import org.jsoup.nodes.Attributes;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -10,9 +8,9 @@ import org.jsoup.select.Elements;
 import java.io.File;
 import java.io.IOException;
 
-import static main.me.tostring.aemdoc.Constants.DOCS_ADOBE_COM;
-import static main.me.tostring.aemdoc.Constants.JKS;
-import static main.me.tostring.aemdoc.Constants.RES_DIR;
+import static me.tostring.aemdoc.Constants.DOCS_ADOBE_COM;
+import static me.tostring.aemdoc.Constants.JKS;
+import static me.tostring.aemdoc.Constants.RES_DIR;
 
 /**
  * Created by shamalroy on 3/31/16.

@@ -1,7 +1,6 @@
-package main.me.tostring.aemdoc;
+package me.tostring.aemdoc;
 
-import static main.me.tostring.aemdoc.Constants.RES_DIR;
-import static main.me.tostring.aemdoc.Constants.STYLE_CSS;
+import static me.tostring.aemdoc.Constants.STYLE_CSS;
 
 /**
  * Created by shamalroy on 3/31/16.
