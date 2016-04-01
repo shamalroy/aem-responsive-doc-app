@@ -17,7 +17,6 @@ public class UrlFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
         if (request instanceof HttpServletRequest) {
             String uri = ((HttpServletRequest) request).getRequestURI().toString();
-            System.out.println(uri);
             ((HttpServletResponse) response).sendRedirect("/?d=" + uri);
         } else {
             filterChain.doFilter(request, response);

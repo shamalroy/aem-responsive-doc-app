@@ -7,6 +7,8 @@ import org.jsoup.nodes.Element;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import static me.tostring.aemdoc.Constants.JKS;
 import static me.tostring.aemdoc.Constants.RES_DIR;
@@ -15,6 +17,7 @@ import static me.tostring.aemdoc.Constants.RES_DIR;
  * Created by shamalroy on 3/31/16.
  */
 public class Doc {
+    Logger logger = Logger.getLogger(this.getClass().getName());
     Document doc;
 
     public Doc(Document doc) {
@@ -27,7 +30,6 @@ public class Doc {
 
     private void loadDocPage(String url) {
         try {
-            System.out.println("URL: " + url);
             File file = new File(RES_DIR + JKS);
             String absolutePath = file.getAbsolutePath();
 
@@ -40,7 +42,7 @@ public class Doc {
             Utils.updateStaticResPath(doc.body(), "img", "src", "/content");
 
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.log(Level.SEVERE, "Error:", e);
         }
     }
 
