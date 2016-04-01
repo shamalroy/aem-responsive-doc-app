@@ -1,8 +1,8 @@
-<%@ page import="me.tostring.aemdoc.*" %>
+<%@ page import="me.tostring.aemdoc.Utils" %>
 <%!
-    String render(String contextPath) {
-        return Utils.renderResponsiveHtml("https://docs.adobe.com/content/docs/en/aem/6-1.html", contextPath);
+    String render(HttpServletRequest request) {
+        return Utils.renderResponsiveHtml(request);
     }
 %>
-<%= render(request.getContextPath()) %>
+<%= render(request) %>
 

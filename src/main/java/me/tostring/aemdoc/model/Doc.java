@@ -1,4 +1,4 @@
-package me.tostring.aemdoc;
+package me.tostring.aemdoc.model;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -8,9 +8,7 @@ import org.jsoup.select.Elements;
 import java.io.File;
 import java.io.IOException;
 
-import static me.tostring.aemdoc.Constants.DOCS_ADOBE_COM;
-import static me.tostring.aemdoc.Constants.JKS;
-import static me.tostring.aemdoc.Constants.RES_DIR;
+import static me.tostring.aemdoc.Constants.*;
 
 /**
  * Created by shamalroy on 3/31/16.
@@ -51,7 +49,7 @@ public class Doc {
             if (cssLink.hasAttr(att)) {
                 String attVal = cssLink.attr(att);
                 if (attVal.startsWith("/etc")) {
-                    attVal = DOCS_ADOBE_COM + attVal;
+                    attVal = ADOBE_DOCS_ANONYMOUS_HOST + attVal;
                 }
                 cssLink.attr(att, attVal);
             }
