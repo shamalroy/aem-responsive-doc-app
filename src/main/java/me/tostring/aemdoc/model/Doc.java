@@ -1,14 +1,15 @@
 package me.tostring.aemdoc.model;
 
+import me.tostring.aemdoc.Utils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
 import java.io.File;
 import java.io.IOException;
 
-import static me.tostring.aemdoc.Constants.*;
+import static me.tostring.aemdoc.Constants.JKS;
+import static me.tostring.aemdoc.Constants.RES_DIR;
 
 /**
  * Created by shamalroy on 3/31/16.
@@ -21,43 +22,32 @@ public class Doc {
     }
 
     public Doc(String url) {
-        getDocPage(url);
+        loadDocPage(url);
     }
 
-    private void getDocPage(String url) {
+    private void loadDocPage(String url) {
         try {
             System.out.println("URL: " + url);
             File file = new File(RES_DIR + JKS);
             String absolutePath = file.getAbsolutePath();
-            System.out.println("JKS Path: " + absolutePath);
+
             System.setProperty("javax.net.ssl.trustStore", absolutePath);
             doc = Jsoup.connect(url).followRedirects(true).get();
 
             // change the css,js files to absolute path https://docs.adobe.com
-            updateStaticResPath("link", "href");
-            updateStaticResPath("script", "src");
+            Utils.updateStaticResPath(doc.head(), "link", "href", "/etc");
+            Utils.updateStaticResPath(doc.head(), "script", "src", "/etc");
+            Utils.updateStaticResPath(doc.body(), "img", "src", "/content");
 
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private void updateStaticResPath(String tag, String att) {
+
+    public void setMetaTag(String meta) {
         Element head = doc.head();
-        Elements tagEl = head.getElementsByTag(tag);
-        for (Element cssLink : tagEl) {
-            if (cssLink.hasAttr(att)) {
-                String attVal = cssLink.attr(att);
-                if (attVal.startsWith("/etc")) {
-                    attVal = ADOBE_DOCS_ANONYMOUS_HOST + attVal;
-                }
-                cssLink.attr(att, attVal);
-            }
-        }
-    }
-
-    public void setMetadata(String meta) {
-
+        head.prepend(meta);
     }
 
     public void setCss(String cssPath) {
