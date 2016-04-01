@@ -6,7 +6,7 @@
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>AEM Responsive Docs</name>
-  <url>http://maven.apache.org</url>
+    <url>http://aem-docs.tostring.me</url>
 
   <dependencies>
       <dependency>
