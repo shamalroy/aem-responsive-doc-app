@@ -1,25 +1,14 @@
-div.SiteHeaderBar {
-    color: #ffffff;
-    background-color: #ffffff;
-    display: none;
-    height: 0;
-}
-
 div.docs-fixed {
-    display: none;
-}
-
-div.SiteFooterBar.LayoutCell.TextInvert.LinkInvert.LinkStrong {
     display: none;
 }
 
 body.contentpage.page {
     background-color: #ffffff;
-    margin-top: 20px;
+    /*margin-top: 20px;*/
     padding-top: 0;
     position: relative;
     clear: both;
-    padding-bottom: 5px;
+    /*padding-bottom: 5px;*/
     display: block;
     word-wrap: break-word;
     visibility: visible;
@@ -38,7 +27,7 @@ body.contentpage.page {
 
 div.en {
     background-color: #ffffff;
-    margin-bottom: -20px;
+    /*margin-bottom: -20px;*/
 }
 
 div.center a h1 {
@@ -78,13 +67,6 @@ div.section.title h3 {
     word-wrap: break-word;
     -webkit-font-smoothing: antialiased;
     border: none;
-}
-
-div.side-cell {
-    z-index: 10;
-    position: fixed;
-    right: 0;
-    top: 0;
 }
 
 div.text ul {
@@ -281,7 +263,7 @@ div.stationary {
     margin: 0 auto;
 }
 
-div.L1 {
+div.L1, #layoutLogic {
     width: 100%;
 }
 
@@ -294,6 +276,7 @@ div.trail.breadcrumb {
     color: rgba(0,0,0,.3);
     display: block;
     line-height: 1.2;
+    margin-top: 20px;
 }
 
 div.docs-versions {
@@ -431,5 +414,24 @@ div.text p {
     visibility: visible;
     -webkit-font-smoothing: antialiased;
     border-style: none;
+}
+
+div.SiteFooterBar.LayoutCell.TextInvert.LinkInvert.LinkStrong {
+    display: none;
+}
+
+div.SiteHeaderBar {
+    color: #ffffff;
+    background-color: #ffffff;
+    display: none;
+    height: 0;
+}
+
+div.side-cell {
+    z-index: 10;
+    position: fixed;
+    right: 0;
+    top: 0;
+    display: none;
 }
 
